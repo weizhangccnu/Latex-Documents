@@ -2,8 +2,10 @@
 \pdfoutput=1
 
 \usepackage{amsmath}
-\usepackage{graphicx}
+\usepackage{float}
+\usepackage{graphicx, subfig}
 \usepackage{geometry}
+\usepackage{caption}
 \usepackage{indentfirst}
 \usepackage{times}              % set Times New Romans type
 \usepackage{setspace}           % set line to line space 
@@ -38,6 +40,16 @@
 \section{General Description of LOCld55}    % Part One
 
 LOCld55 is a \textbf{single-channel, 14Gbps VCSEL driver} ASIC designed under SMIC 55nm CMOS technology. The design follows the references [1][2].
+
+Figure 1 illustrates the block diagram of LOCld55 that includes a laser driver, I2C control unit, and limited amplifier.
+
+%Figure 1: LOCld55 block diagram
+\begin{figure}[H]
+    \includegraphics[width=\linewidth]{./Img/locld55.png}
+    \caption{LOCld55 block diagram}
+%    \lable{Figure 1}
+\end{figure}
+%Figure 1: LOCld55 block diagram
 
 \section{Pin map of LOCld55}                % Part Two 
 
