@@ -1,13 +1,13 @@
 ### 1. Complie .tex file command
 ```
-pdflatex LOCld55_Document_Design.tex
+pdflatex LOCld55_Design_Document.tex
 ```
 ### 2. Auto generate bibliography
   - Add cite package
 ```
 \usepackage{cite}
 ```
-  - Edit LOCld55_Document_Design.bib file as shown in below text
+  - Edit LOCld55_Design_Document.bib file as shown in below text
 ```
 @article{ref1,
 title={Design Techniques for Signal Reflection Suppression in High-Speed 25-Gb/s Laser Drivers in CMOS},
@@ -35,3 +35,4 @@ bibtex LOCld55_Design_Document.aux
 ```
 pdflatex LOCld55_Design_Document.tex
 ```
+### 3. How to install .sty package 
