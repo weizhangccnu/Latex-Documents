@@ -27,7 +27,7 @@ year={2018},
 ```
 pdflatex LOCld55_Design_Document.tex
 ```
-  - Compile LOCld55_Design_Document.aux through below command
+  - Compile LOCld55_Design_Document.aux file through below command
 ```
 bibtex LOCld55_Design_Document.aux
 ```
