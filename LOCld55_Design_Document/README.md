@@ -1,8 +1,8 @@
-### complie .tex file command
+### 1. Complie .tex file command
 ```
 pdflatex LOCld55_Document_Design.tex
 ```
-### auto generate bibliography
+### 2. Auto generate bibliography
   - Add cite package
 ```
 \usepackage{cite}
