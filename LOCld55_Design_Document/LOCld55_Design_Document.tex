@@ -1,8 +1,9 @@
-\documentclass[15pt,a4paper]{article}
+\documentclass[11pt,a4paper]{article}
 \pdfoutput=1
 
 %=========================Package begin========================%
 \usepackage{amsmath}
+%\usepackage[english]{bable}
 \usepackage{color}
 \usepackage{cite}               % citiation
 \usepackage{float}
@@ -15,18 +16,38 @@
 %=========================Package end========================%
 \geometry{left=2.5cm,right=2.5cm,top=2.5cm, bottom=2.5cm}
 
-\title{\textbf{LOCld55 Design Document}}
+%=================================================================%
+\newcommand{\HRule}[1]{\rule{\linewidth}{#1}}
 
-%Email:wzhang@mails.ccnu.edu.cn
+\makeatletter
+\def\printtitle{{\centering \@title\par}}
+\makeatother
 
-\author{\textbf{Author:} Wei Zhang, Di Guo, Quan Sun}
+\makeatletter
+\def\printauthor{{\centering \large \@author}}
+\makeatother
 
-%\affil{College}
-\date{\today}
+\title{ \LARGE \textbf{{LOCld55 Design Document}}
+        \HRule{2.5pt} \\[0.5cm]
+        \normalsize \today
+}
+
+\author{
+        \textbf{Author:} Wei Zhang\\
+        \textbf{Co-author:} Di Guo, Quan Sun\\
+        \texttt{\textbf{wzhang@mails.ccnu.edu.cn}}\\
+}
+%=================================================================%
 
 \begin{document}
+
+%=================================================================%
+\printtitle
+\vfill                          % space from today to author
+
+\printauthor
+%=================================================================%
 \begin{spacing}{1.25}           % set line to line space is 1.25
-\maketitle
 
 
 \thispagestyle{empty}           % first page doesn't page number
@@ -43,9 +64,9 @@
 
 \section{General Description of LOCld55}    % Part One
 
-LOCld55 is a \textbf{single-channel, 14Gbps VCSEL driver} ASIC designed under SMIC 55nm CMOS technology specifically for datacom and telecommunication applications. The design follows the references\cite{ref1}.
+LOCld55 is a \textbf{single-channel, 14Gbps VCSEL driver} ASIC fabricated in SMIC 55nm CMOS technology specifically for datacom and telecommunication applications. The design follows the references\cite{ref1}. The output of the laser driver is intended to drive AC-coupled, edge-emitting, common-anode VCSEL. Modulation current and Bias current of Laser driver are adjusted via I2C Control Unit with reset function. The Limiting Amplifier Receiver with programmable bandwidth function is used to receive and amplify TIA's output signal then driver standard high serial interface. 
 
-Figure 1 illustrates the block diagram of LOCld55 that includes a laser driver, I2C control unit, and limiting amplifier receiver.
+Figure 1 illustrates the block diagram of LOCld55 that includes a Laser Driver, I2C Control Unit, and Limiting Amplifier Receiver. The laser driver offers differential input and differential output features with 800mV common-mode voltage.
 
 %Figure 1: LOCld55 block diagram
 \begin{figure}[H]
@@ -82,12 +103,12 @@ The die size and pad out of LOCld55 are shown in Section 2. Detailed schematic a
 
 \subsection{Limiting Amplifier simulation results}
 
-\section{References}                        % Part Five
+%\section{References}                        % Part Five
 
 \end{spacing}
 
 \bibliographystyle{plain}
+\addcontentsline{toe}{chapter}{References}
 \bibliography{LOCld55_Design_Document}
-
 
 \end{document}
