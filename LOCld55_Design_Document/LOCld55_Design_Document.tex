@@ -35,7 +35,10 @@
 \author{
         \textbf{Author:} Wei Zhang\\
         \textbf{Co-author:} Di Guo, Quan Sun\\
-        \texttt{\textbf{wzhang@mails.ccnu.edu.cn}}\\
+        \textbf{}\\
+        \textbf{Version} 1.1/July 4, 2018\\
+        \textbf{}\\
+        \textbf{Email:} \texttt{wzhang@mails.ccnu.edu.cn}\\
 }
 %=================================================================%
 
@@ -64,9 +67,9 @@
 
 \section{General Description of LOCld55}    % Part One
 
-LOCld55 is a \textbf{single-channel, 14Gbps VCSEL driver} ASIC fabricated in SMIC 55nm CMOS technology specifically for datacom and telecommunication applications. The design follows the references\cite{ref1}. The output of the laser driver is intended to drive AC-coupled, edge-emitting, common-anode VCSEL. Modulation current and Bias current of Laser driver are adjusted via I2C Control Unit with reset function. The Limiting Amplifier Receiver with programmable bandwidth function is used to receive and amplify TIA's output signal then driver standard high serial interface. 
+LOCld55 is a \textbf{single-channel, 14Gbps VCSEL driver} ASIC fabricated in SMIC 55nm CMOS technology specifically for datacom and telecommunication applications. The design follows the references\cite{ref1}. The output of the Laser Driver is intended to drive AC-coupled, edge-emitting, common-anode VCSEL. Modulation current and Bias current of Laser driver are adjusted via I2C Control Unit with reset function. The Limiting Amplifier Receiver with programmable bandwidth function is used to receive and amplify TIA's output signal then driver standard high serial interface. 
 
-Figure 1 illustrates the block diagram of LOCld55 that includes a Laser Driver, I2C Control Unit, and Limiting Amplifier Receiver. The laser driver offers differential input and differential output features with 800mV common-mode voltage.
+Figure 1 illustrates the block diagram of LOCld55 that includes a Laser Driver, I2C Control Unit, and Limiting Amplifier Receiver. The Laser Driver offers differential input and differential output interface with 800mV common-mode voltage.
 
 %Figure 1: LOCld55 block diagram
 \begin{figure}[H]
@@ -85,6 +88,21 @@ The die size and pad out of LOCld55 are shown in Section 2. Detailed schematic a
 \subsection{Pin Descriptions}
 
 \section{Detailed design of LOCld55}        % Part Three
+The overall schematic of LOCld55 is composed by single-channel module, receive side module and I2C module. The single-channel is composed of the Equalizer, the two-stage limiting amplifier, the output dirver, and their biasing circuits as shown in Figure 2. The single-channel layout (input traces and input/output pads are not included) is shown in Figure 3.
+
+The biasing circuit is used to generate a feedback-control bias voltage for the tail current of the equalizer and two-stage limiting amplifier, so that the common voltage (0.8V) of each stage in equalizer and two-stage limiting amplifier is consistent under different corners and temperatures.
+
+Output-driver biasing circuit receives control bits from I2C module and provides adjustable tail current for the output driver to change the modulation current and bias current for the TOSA.
+
+Each module above will be detailly illustrated in the following sections.
+%Figure 3: Layout single-channel
+\begin{figure}[H]
+    \includegraphics[width=\linewidth]{./Img/Layout_Eq_LA_OD_Background.png}
+    \caption{Single-channel layout}
+%    \lable{Figure 3}
+\end{figure}
+%Figure 3: Layout single-channel
+
 \subsection{Equalizer}
 
 \subsection{Limited Amplifier (LA)}
