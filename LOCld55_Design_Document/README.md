@@ -46,4 +46,5 @@ tlmgr packagename.sty
 sudo yum search texlive
 sudo yum install texlive-amscls.noarch  #AMS document class for amscls
 ```
-  - 
+### 4. package download website:
+  - [CTAN website](https://ctan.org)
