@@ -4,6 +4,7 @@
 %=========================Package begin========================%
 \usepackage{amsmath}
 \usepackage{color}
+\usepackage[colorlinks, linkcolor=black, citecolor=black]{hyperref}
 \usepackage{CJK}
 \usepackage{multirow}
 \usepackage{url}
@@ -20,6 +21,7 @@
 
 %=================================================================%
 \newcommand{\HRule}[1]{\rule{\linewidth}{#1}}
+\renewcommand{\contentsname}{\centerline{Contents}}
 
 \makeatletter
 \def\printtitle{{\centering \@title\par}}
@@ -29,7 +31,8 @@
 \def\printauthor{{\centering \large \@author}}
 \makeatother
 
-\title{ \LARGE \textbf{{LOCld55 Design Document}}
+\title{ 
+        \LARGE \textbf{{LOCld55 Design Document}}
         \HRule{2.5pt} \\[0.5cm]
         \normalsize \today
 }
@@ -168,14 +171,14 @@ Each module above will be detailly illustrated in the following sections.
 
 \subsection{Equalizer}
 
-The equalizer follows the previous input interface (0.8V common-voltage, single-ended 100mV amplitued). The typical structure of equalizer with CTLE (Continuous-Time Linear Equalizer) is shown in Figuer 4. Equalizer amplifier with RC degeneration can provide frequency peaking with gain at Nyquist frequency. The transfer function of equalizer is represented by equation (1). The tune degeneration resistor and capacitor can adjust zero frequency and 1\^{st} pole which sets peaking and DC gain.
+The equalizer follows the previous input interface (0.8V common-voltage, single-ended 100mV amplitued). The typical structure of equalizer with CTLE (Continuous-Time Linear Equalizer)\cite{equalizer} is shown in Figuer 4. Equalizer amplifier with RC degeneration can provide frequency peaking with gain at Nyquist frequency. The transfer function of equalizer is represented by equation (1). The tune degeneration resistor and capacitor can adjust zero frequency and 1\^{st} pole which sets peaking and DC gain.
 \begin{equation}
 H(s) = \frac{g_m}{C_p} * \frac{s + \frac{1}{R_s * C_s}}{\left(s + \frac{1 + g_m * R_s * 0.5}{R_s * C_s}\right)\left(s + \frac{1}{R_D * C_p}\right)} \tag{1} 
 \end{equation}
 
 $$\omega_z = \frac{1}{R_S * C_S},\quad \omega_{p1} = \frac{1 + g_m * R_S * 0.5}{R_S * C_S}, \quad \omega_{p2} = \frac{1}{R_D * C_p}$$
 $$DC \ gain = \frac{g_m * R_D}{1 + g_m * R_S * 0.5}, \quad Ideal\ peak\ gain = g_m * R_D$$
-$$Ideal Peaking = \frac{Ideal\ peak\ gain}{DC\ gain} = \frac{\omega_{p1}}{\omega_z} = 1 + g_m * R_S * 0.5$$
+$$Ideal \ Peaking = \frac{Ideal\ peak\ gain}{DC\ gain} = \frac{\omega_{p1}}{\omega_z} = 1 + g_m * R_S * 0.5$$
  
 %Figure typical structure of equalizer 
 \begin{figure}[H]
@@ -188,6 +191,7 @@ Figure 4 shows the schematic of equalizer with CTLE structure, which has a diffe
     \centerline{\includegraphics[width=0.7\linewidth]{./Img/Schematic_Equalizer_Background.png}}
     \caption{Schematic of equalizer}
 \end{figure}
+The tail current of equalizer is about 4mA that is known via pre-simulation.
 
 \subsection{Limited Amplifier (LA)}
 
@@ -210,7 +214,8 @@ Figure 4 shows the schematic of equalizer with CTLE structure, which has a diffe
 \end{spacing}
 
 \bibliographystyle{plain}
-\addcontentsline{toe}{chapter}{References}
+\setcounter{section}{7}
+\addcontentsline{toc}{section}{References}
 \bibliography{LOCld55_Design_Document}
 
 \end{document}
