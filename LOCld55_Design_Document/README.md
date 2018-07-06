@@ -49,7 +49,16 @@ sudo yum install texlive-amscls.noarch  #AMS document class for amscls
 ### 4. package download website:
   - [CTAN website](https://ctan.org)
 ### 5. Configure git without username and password when executes git push command
+  - Configure ~/.gitconfig file
 ```
 git config --global credential.helper store
 
+```
+  - Delete saved password
+```
+git credential-osxkeychain erase
+
+or 
+
+rm ~/.git-credentials
 ```
