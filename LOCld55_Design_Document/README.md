@@ -36,3 +36,14 @@ bibtex LOCld55_Design_Document.aux
 pdflatex LOCld55_Design_Document.tex
 ```
 ### 3. How to install .sty package 
+  - Auto install package
+```
+tlmgr packagename.sty
+
+```
+  - install texlive package through yum on CentOS system
+```
+sudo yum search texlive
+sudo yum install texlive-amscls.noarch  #AMS document class for amscls
+```
+  - 
