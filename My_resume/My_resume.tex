@@ -45,6 +45,7 @@
 \sectionfont{%			            % Change font of \section command
 	\usefont{OT1}{phv}{b}{n}%		% bch-b-n: CharterBT-Bold font
 	\sectionrule{0pt}{0pt}{-5pt}{2pt}}
+\geometry{left=2cm, right=2cm, top=2.5cm, bottom=2.5cm}
 
 %%% Macros
 %%% ------------------------------------------------------------
@@ -66,7 +67,7 @@
 		\noindent\hangindent=2em\hangafter=0 % Indentation
 		\parbox{\spacebox}{        % Box to align text
 		\textit{#1}}		       % Entry name (birth, address, etc.)
-		\hspace{1.5em} #2 \par}    % Entry value
+		\hspace{1em} #2 \par}    % Entry value
 
 \newcommand{\SkillsEntry}[2]{      % Same as \PersonalEntry
 		\noindent\hangindent=2em\hangafter=0 % Indentation
@@ -77,7 +78,7 @@
 \newcommand{\EducationEntry}[4]{
 		\noindent \textbf{#1} \hfill      % Study
 		\colorbox{Black}{%
-			\parbox{6em}{%
+			\parbox{10em}{%
 			\hfill\color{White}#2}} \par  % Duration
 		\noindent \textit{#3} \par        % School
 		\noindent\hangindent=2em\hangafter=0 \small #4 % Description
@@ -95,8 +96,8 @@
 \begin{document}
 % you can upload a photo and include it here...
 \begin{wrapfigure}{l}{0.4\textwidth}
-	\vspace*{-1em}
-		\includegraphics[width=0.16\textwidth]{./Img/Picture.jpg}
+	\vspace*{-2em}
+		\includegraphics[width=0.16\textwidth]{./Img/WeiZhang.JPG}
 \end{wrapfigure}
 
 \MyName{Zhang Wei}
@@ -108,6 +109,7 @@
 %%% ------------------------------------------------------------
 \NewPart{Personal details}{}
 
+\PersonalEntry{\textbf{Name}}{Zhang Wei}
 \PersonalEntry{\textbf{Birth}}{April 3, 1989}
 \PersonalEntry{\textbf{Address}}{Room 723, Building 9, NO.152 Luoyu Road,}
 \PersonalEntry{}{Hongshan District, Wuhan, Hubei Province, 430079, P.R. China}
@@ -118,20 +120,26 @@
 %%% ------------------------------------------------------------
 \NewPart{Education}{}
 
-\EducationEntry{MSc. Name of Education}{2010-2012}{Name of
-  University}{Descriptive text goes here. In order to maintain a stylish look, try to fill this description with a few lines of text. Do the same for the other entries in the education section.}
+\EducationEntry{Ph.D. \qquad Paritical physics and nuclear physics}{Sept, 2017 to Present}{Central China Normal University (CCNU)}{During this time, I mainly focus on the integrated ciricuit design.}
+\sepspace
+\EducationEntry{MSc. \qquad Circuit and system}{Sept, 2014 to Jun, 2017}{Central China Normal University (CCNU)}{.}
 \sepspace
 
-\EducationEntry{BSc. Name of Education}{2007-2010}{Name of University}{Descriptive text goes here. In order to maintain a stylish look, try to fill this description with a few lines of text. Do the same for the other entries in the education section.}
+\EducationEntry{BSc. \ \qquad Electronic science and technology}{Sept, 2008 to Jun, 2013}{Hubei University of Arts and Science}{.}
 
 %%% Work experience
 %%% ------------------------------------------------------------
-\NewPart{Work experience}{}
+\NewPart{Exchange experience}{}
 
-\EducationEntry{Job name}{2011-present}{Company Name inc., Full-time}{Job description goes here. To maintain a stylish look, try to fill this description with a few lines of text. Do the same for the other entries in this section.}
-\sepspace
+\EducationEntry{Visiting Scholar}{Feb, 2016 to Jan, 2017}{Lawrence Berkeley National Laboratory (LBNL)}{During this time, I am as an affiliate to participate in the development of \emph{Topmetal} CMOS charge sensor, and a charge readout plane using \emph{Topmetal} for neutrinoless double-beta decay searches.}
 
-\EducationEntry{Job name}{2010-2011}{Company Name inc., Part-time}{Job description goes here. To maintain a stylish look, try to fill this description with a few lines of text. Do the same for the other entries in this section.}
+\NewPart{Research work}{}
+\begin{itemize}
+    \item \textbf{\emph{Topemtal-II-} sensor chip digital readout test \quad (2016, LBNL)}
+    \item \textbf{\emph{Topemtal-IIa} sensor chip readout test \quad (2017, CCNU)}
+    \item \textbf{\emph{SPORT120} LDD and TIA chips test \quad (2018, CCNU)}
+    \item \textbf{\emph{LALD14} chip design \quad (in processing, CCNU)}
+\end{itemize}
 
 %%% Skills
 %%% ------------------------------------------------------------
@@ -143,9 +151,4 @@
 
 \SkillsEntry{Software}{\textsc{Matlab}, \LaTeX, \textsc{Ansys}, \textsc{Comsol}}
 
-
-%%% References
-%%% ------------------------------------------------------------
-\NewPart{References}{}
-Available upon request
 \end{document}
